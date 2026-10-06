@@ -4,6 +4,10 @@ import { BASE_URL } from '@utils/env';
 const isCI = Boolean(process.env.CI);
 const browserProjects = [
   {
+    name: 'chrome',
+    use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
+  },
+  {
     name: 'chromium',
     use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
   },
@@ -32,8 +36,8 @@ export default defineConfig({
     actionTimeout: 10_000,
     navigationTimeout: 20_000,
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    // screenshot: 'only-on-failure',
+    // video: 'retain-on-failure',
     acceptDownloads: true,
   },
   projects: [
